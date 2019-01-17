@@ -8,7 +8,7 @@ public class Task {
     public Task(String massage, String date) {
         this.massage = massage;
         this.date = date;
-    }
+    }//
 
     public String getDate() {
         return date;

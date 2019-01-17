@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+// addpter part.
 
 public class MyAdpter extends RecyclerView.Adapter <MyAdpter.MyViewHolder> {
 
@@ -38,6 +39,8 @@ public class MyAdpter extends RecyclerView.Adapter <MyAdpter.MyViewHolder> {
 
         myViewHolder.bind(tasks.get(position));  // index ha ro set mekhoonee. to view holder
 
+        // position is a index in list.
+
     }
 
     @Override
@@ -59,11 +62,9 @@ public class MyAdpter extends RecyclerView.Adapter <MyAdpter.MyViewHolder> {
 
         public void bind(Task task){  // field ha ro por mikoneee. toye on bind view holder
 
-            massageTextView.setText(task.getDate());
+            massageTextView.setText(task.getMassage());
             DateTextView.setText(task.getDate());
 
-
         }
-
     }
 }
