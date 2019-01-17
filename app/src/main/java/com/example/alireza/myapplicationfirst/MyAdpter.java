@@ -16,7 +16,7 @@ public class MyAdpter extends RecyclerView.Adapter <MyAdpter.MyViewHolder> {
 
         if (tasks == null){
 
-            //**** this part must throws exception.
+            //**** this part must throws exception.//
         }
         else {
             this.tasks = tasks;
