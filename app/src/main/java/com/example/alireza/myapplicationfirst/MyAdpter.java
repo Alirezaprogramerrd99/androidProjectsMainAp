@@ -63,7 +63,7 @@ public class MyAdpter extends RecyclerView.Adapter <MyAdpter.MyViewHolder> {
         public void bind(Task task){  // field ha ro por mikoneee. toye on bind view holder
 
             massageTextView.setText(task.getMassage());
-            DateTextView.setText(task.getDate());
+            DateTextView.setText(task.getDate()); // 6 fields must be added. + one field in the Task class complete
 
         }
     }

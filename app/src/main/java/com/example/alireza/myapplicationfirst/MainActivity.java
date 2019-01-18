@@ -6,6 +6,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -23,18 +25,22 @@ public class MainActivity extends AppCompatActivity {
             taskList.clear();
         }
 
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
-        taskList.add(new Task("Important", "2018.12.3"));
-        taskList.add(new Task("dededed", "2015.3.5"));
+        /// sort must be done here....
+
+        taskList.add(new Task("without time"));
+        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "12" ,"30" ,"0"));
+        taskList.add(new Task("Important", "2014" ,"12" ,"3" , "12" ,"30" ,"0"));
+        taskList.add(new Task("Important", "2019" ,"12" ,"3" , "12" ,"30" ,"0"));
+        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "11" ,"30" ,"0"));
+        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "12" ,"30" ,"0"));
+
+
+
+        //taskList.add(task);
+        Collections.sort(taskList);  // sorting ba time ha.
+
+
+
     }
 
     void showData() {
