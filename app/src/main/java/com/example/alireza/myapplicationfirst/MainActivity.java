@@ -27,12 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
         /// sort must be done here....
 
-        taskList.add(new Task("without time"));
-        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "12" ,"30" ,"0"));
-        taskList.add(new Task("Important", "2014" ,"12" ,"3" , "12" ,"30" ,"0"));
-        taskList.add(new Task("Important", "2019" ,"12" ,"3" , "12" ,"30" ,"0"));
-        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "11" ,"30" ,"0"));
-        taskList.add(new Task("Important", "2018" ,"12" ,"3" , "12" ,"30" ,"0"));
+        taskList.add(new Task("not def",1));
+        taskList.add(new Task("not def", "2018" ,"12" ,"3" , "12" ,"30" ,"0",1));
+        taskList.add(new Task("not def", "2014" ,"12" ,"3" , "12" ,"30" ,"0",1));
+        taskList.add(new Task("other", "2019" ,"12" ,"3" , "12" ,"30" ,"0",2));
+        taskList.add(new Task("high", "2018" ,"12" ,"3" , "12" ,"30" ,"0",3));
+        taskList.add(new Task("high", "2018" ,"12" ,"3" , "11" ,"30" ,"0",3));
+        taskList.add(new Task("high",3));
+        taskList.add(new Task("other", "2018" ,"12" ,"3" , "12" ,"30" ,"0",2));
+        taskList.add(new Task("low", "2018" ,"12" ,"3" , "12" ,"30" ,"0",5));
+        taskList.add(new Task("low", "2019" ,"12" ,"3" , "12" ,"30" ,"0",5));
+        taskList.add(new Task("low", "2018" ,"12" ,"3" , "11" ,"30" ,"0",5));
 
 
 
