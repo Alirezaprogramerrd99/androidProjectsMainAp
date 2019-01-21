@@ -32,6 +32,17 @@ public class Task implements Comparable<Task> {
         conCatDate();
     }
 
+    Task(String massage, String date, String year, String month, String day){  // using calander.
+
+        isDated = true;
+        this.massage = massage;
+        this.date = date;
+        this.Y = year;
+        this.M = month;
+        this.D = day;
+        calcTotalD();
+    }
+
     Task(String massage, int priority) {
         this.massage = massage;
         this.priority = priority;

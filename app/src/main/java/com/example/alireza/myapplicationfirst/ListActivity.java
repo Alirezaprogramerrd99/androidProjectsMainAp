@@ -69,23 +69,33 @@ public class ListActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent toList = new Intent(getApplicationContext(), MainActivity.class);
 
-                    if (!checkDatesEnterd(taskYear, taskMonth, taskDay, taskHour, taskMinute, taskSecond)) {
+                    if (!(taskInfo.getText().toString().equals("") && taskYear.getText().toString().equals("")
+                            && taskMonth.getText().toString().equals("") && taskDay.getText().toString().equals("")
+                            && taskHour.getText().toString().equals("") && taskMinute.getText().toString().equals("") &&
+                            taskSecond.getText().toString().equals(""))) {
 
-                        MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), 2));
+                        if (!checkDatesEnterd(taskYear, taskMonth, taskDay, taskHour, taskMinute, taskSecond)) {
 
-                    }
-                    else {
-                        MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), taskYear.getText().toString(),
-                                taskMonth.getText().toString(), taskDay.getText().toString(), taskHour.getText().toString(),
-                                taskMinute.getText().toString(), taskSecond.getText().toString(), 2));
+                            MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), 2));
 
-//                        Toast.makeText(getApplicationContext(), "with date",
-//                                Toast.LENGTH_LONG).show();
-                    }
+                            Toast.makeText(getApplicationContext(), "without date",
+                                    Toast.LENGTH_LONG).show();
+
+                        } else {
+                            MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), taskYear.getText().toString(),
+                                    taskMonth.getText().toString(), taskDay.getText().toString(), taskHour.getText().toString(),
+                                    taskMinute.getText().toString(), taskSecond.getText().toString(), 2));
+
+                            Toast.makeText(getApplicationContext(), "with date",
+                                    Toast.LENGTH_LONG).show();
+                        }
 
                         startActivity(toList);
 
-                    resetEditTexts();
+                        resetEditTexts();
+                    }
+
+                    // ****************else fill the blanks.
 
                 }
             });

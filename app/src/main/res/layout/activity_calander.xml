@@ -7,13 +7,13 @@
     tools:context=".CalanderActivity">
 
 
-    <TextView
+    <EditText
         android:id="@+id/showDateTxt"
         android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+
+        android:layout_marginTop="68dp" />
 
     <LinearLayout
         android:layout_marginTop="150dp"
