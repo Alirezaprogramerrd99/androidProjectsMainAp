@@ -8,11 +8,10 @@
 
 
     <EditText
-        android:id="@+id/showDateTxt"
-        android:layout_width="200dp"
+        android:id="@+id/infoMassageTxt"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-
+        android:layout_marginLeft="88dp"
         android:layout_marginTop="68dp" />
 
     <LinearLayout

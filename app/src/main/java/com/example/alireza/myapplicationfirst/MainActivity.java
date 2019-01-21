@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -17,13 +18,15 @@ public class MainActivity extends AppCompatActivity {
     static List<Task> taskList;
     MyAdpter adpter;
 
-    public static void prepareData(Task task) {
+    public static boolean prepareData(Task task) {
 
         if (taskList == null) {  // if it was empty list create it
             taskList = new Vector<Task>();
         }
 
-        /// sort must be done here....
+        if (taskList.contains(task)){
+            return false;
+        }
 
         taskList.add(task);
 
@@ -39,13 +42,9 @@ public class MainActivity extends AppCompatActivity {
 //        taskList.add(new Task("low", "2019" ,"12" ,"3" , "12" ,"30" ,"0",5));
 //        taskList.add(new Task("low", "2018" ,"12" ,"3" , "11" ,"30" ,"0",5));
 
-
-
         //taskList.add(task);
         Collections.sort(taskList);  // sorting ba time ha.
-
-
-
+        return true;
     }
 
     void showData() {

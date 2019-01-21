@@ -53,15 +53,6 @@ public class ListActivity extends AppCompatActivity {
         submitBtn = (Button) findViewById(R.id.SubmitBtn);
         toCalender = (Button) findViewById(R.id.goTOCalender);
 
-/*        String M, D, H, Min, Sec;
-        msg = taskInfo.getText().toString();
-        Y = taskYear.getText().toString();*/
-
-//        M = taskMonth.getText().toString();
-//        D = taskDay.getText().toString();
-//        H = taskHour.getText().toString();
-//        Min = taskMinute.getText().toString();
-//        Sec = taskSecond.getText().toString();
 
             submitBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -76,9 +67,9 @@ public class ListActivity extends AppCompatActivity {
 
                         if (!checkDatesEnterd(taskYear, taskMonth, taskDay, taskHour, taskMinute, taskSecond)) {
 
-                            MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), 2));
+                            if (!MainActivity.prepareData(new Task((String) taskInfo.getText().toString(), 2)));
 
-                            Toast.makeText(getApplicationContext(), "without date",
+                            Toast.makeText(getApplicationContext(), "this task is alerdy i",
                                     Toast.LENGTH_LONG).show();
 
                         } else {
