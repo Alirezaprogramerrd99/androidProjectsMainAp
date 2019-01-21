@@ -2,6 +2,7 @@ package com.example.alireza.myapplicationfirst;
 
 public class Task implements Comparable<Task> {
 
+    static int numberOfTasks = 0;
     private String massage;
     private String Y;
     private String M;
@@ -16,7 +17,7 @@ public class Task implements Comparable<Task> {
     private int priority; //5 types , 1.not desc , 2.sub , 3.high , 4.med , 5.low
 
     public Task(String massage, String Y, String M, String D, String h, String m, String s, int priority) {
-
+        isDated = true;
         this.massage = massage;
         this.Y = Y;
         this.M = M;
@@ -26,17 +27,17 @@ public class Task implements Comparable<Task> {
         this.s = s;
         this.priority = priority;
 
-        calcTotalD();
-        calcTotalS();
+//        calcTotalD();
+//        calcTotalS();
         conCatDate();
-
-        isDated = true;
     }
 
     Task(String massage, int priority) {
         this.massage = massage;
         this.priority = priority;
         isDated = false;
+        date = "";
+        numberOfTasks++;
     }
 
     public void conCatDate() {
@@ -61,6 +62,7 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
+
         return massage + "\n" + Y + "." + M + "." + D + ".";
     }
 
