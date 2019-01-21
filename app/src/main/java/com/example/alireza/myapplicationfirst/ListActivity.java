@@ -19,6 +19,7 @@ public class ListActivity extends AppCompatActivity {
     EditText taskMinute;
     EditText taskSecond;
     Button submitBtn;
+    Button toCalender;
 
     public boolean checkDatesEnterd(EditText year, EditText month, EditText day, EditText hour, EditText minute, EditText second){
         if (year.getText().toString().equals("")  && month.getText().toString().equals("")  && day.getText().toString().equals("")
@@ -50,6 +51,7 @@ public class ListActivity extends AppCompatActivity {
         taskMinute = (EditText) findViewById(R.id.MinuteTxt);
         taskSecond = (EditText) findViewById(R.id.SecondTxt);
         submitBtn = (Button) findViewById(R.id.SubmitBtn);
+        toCalender = (Button) findViewById(R.id.goTOCalender);
 
 /*        String M, D, H, Min, Sec;
         msg = taskInfo.getText().toString();
@@ -60,10 +62,6 @@ public class ListActivity extends AppCompatActivity {
 //        H = taskHour.getText().toString();
 //        Min = taskMinute.getText().toString();
 //        Sec = taskSecond.getText().toString();
-
-
-
-
 
             submitBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -85,13 +83,23 @@ public class ListActivity extends AppCompatActivity {
 //                                Toast.LENGTH_LONG).show();
                     }
 
-
                         startActivity(toList);
 
                     resetEditTexts();
 
                 }
             });
+
+            toCalender.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent tocal = new Intent(getApplicationContext(), CalanderActivity.class);
+                    startActivity(tocal);
+                }
+            });
+
+
 
     }
 }
