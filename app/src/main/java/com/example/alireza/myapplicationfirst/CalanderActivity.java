@@ -45,15 +45,22 @@ public class CalanderActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         Intent tolListByCal = new Intent(getApplicationContext(), MainActivity.class);
+
                         if (!infoTxt.getText().toString().equals("")) {
-                            MainActivity.prepareData(new Task(infoTxt.getText().toString(), date, year1, month1, day1));
-                            startActivity(tolListByCal);
+
+                            if (MainActivity.prepareData(new Task(infoTxt.getText().toString(), date, year1, month1, day1))) {
+
+
+                                MainActivity.prepareData(new Task(infoTxt.getText().toString(), date, year1, month1, day1));
+                                startActivity(tolListByCal);
+                            }
+                            else
+                                Toast.makeText(getApplicationContext(), "this task is already in the list", Toast.LENGTH_LONG);
                         }
 
-                        //***** else fill the blanks ali mogimi
+                        //***** else fill the blanks
                     }
                 });
-
 
             }
         });

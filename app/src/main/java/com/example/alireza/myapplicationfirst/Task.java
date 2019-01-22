@@ -27,8 +27,8 @@ public class Task implements Comparable<Task> {
         this.s = s;
         this.priority = priority;
 
-//        calcTotalD();
-//        calcTotalS();
+        calcTotalD();
+        calcTotalS();
         conCatDate();
     }
 
@@ -49,6 +49,11 @@ public class Task implements Comparable<Task> {
         isDated = false;
         date = "";
         numberOfTasks++;
+    }
+
+    @Override
+    public boolean equals( Object obj) {
+        return (this.date.equals(((Task)obj).date) && (this.massage.equals(((Task)obj).massage)));
     }
 
     public void conCatDate() {
