@@ -1,5 +1,7 @@
 package com.example.alireza.myapplicationfirst;
 
+import android.widget.Toast;
+
 public class Task implements Comparable<Task> {
 
     static int numberOfTasks = 0;
@@ -14,19 +16,41 @@ public class Task implements Comparable<Task> {
     private long totalD = 0;
     private long totalS = 0;
     private boolean isDated;
+    boolean dontConcat = false;
     private int priority; //5 types , 1.not desc , 2.sub , 3.high , 4.med , 5.low
 
     public Task(String massage, String Y, String M, String D, String h, String m, String s, int priority) {
+
         isDated = true;
         this.massage = massage;
         this.Y = Y;
         this.M = M;
         this.D = D;
-        this.h = h;
-        this.m = m;
-        this.s = s;
-        this.priority = priority;
 
+        if (h.equals("") || m.equals("") || s.equals("")) {
+
+            if (h.equals("")) {
+                this.h = "0";
+                dontConcat = true;
+            }
+            if (m.equals("")) {
+                this.m = "0";
+                dontConcat = true;
+            }
+            if (s.equals("")) {
+                this.s = "0";
+                dontConcat = true;
+            }
+        }
+
+        else {
+
+            this.h = h;
+            this.m = m;
+            this.s = s;
+        }
+
+        this.priority = priority;
         calcTotalD();
         calcTotalS();
         conCatDate();
@@ -44,6 +68,7 @@ public class Task implements Comparable<Task> {
     }
 
     Task(String massage, int priority) {
+
         this.massage = massage;
         this.priority = priority;
         isDated = false;
@@ -52,12 +77,17 @@ public class Task implements Comparable<Task> {
     }
 
     @Override
-    public boolean equals( Object obj) {
+    public boolean equals(Object obj) {
         return (this.date.equals(((Task)obj).date) && (this.massage.equals(((Task)obj).massage)));
     }
 
     public void conCatDate() {
+
+        if (!dontConcat)
         date = Y + "/" + M + "/" + D + "  " + h + ":" + m + ":" + s;
+
+        else
+            date = Y + "/" + M + "/" + D;
     }
 
     public String getDate() {
